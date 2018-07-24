@@ -1,0 +1,63 @@
+label{
+    position: relative;
+    left: 100px;
+    top: 100px;
+}
+
+.check{
+    display: none;
+}
+
+.btn{
+    display: inline-block;
+    height: 60px;
+    width: 120px;
+    background: grey;
+    border-radius: 50px ;
+
+}
+
+.btn::before{
+    content: "";
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    background: #aaa;
+    top: -38px;
+    border-radius: 50px;
+    left: 5px; 
+    transition: background 1.2s ease , left 0.5s ease;
+}
+
+.btn::after{
+    content: "off";
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    background: grey;
+    top: -39px;
+    text-align: center;
+    text-transform: uppercase;
+    left: 65px;
+    color: white;
+    line-height: 50px;
+    border-radius: 50px;
+    transition: left 0.6s ease; 
+}
+
+.check:checked + .btn{
+    background: #7aa039;
+    left: 65px;
+}
+
+.check:checked + .btn::before{
+    background: #6565f0f3;
+    left: 55px;
+}
+
+.check:checked + .btn::after{
+    left: 5px;
+    content: "on";
+    background:#7aa039;
+    
+}
